@@ -60,6 +60,7 @@ NS_ASSUME_NONNULL_END
     // While the scope gesture begin, the pan gesture of tableView should cancel.
     [self.tableView.panGestureRecognizer requireGestureRecognizerToFail:panGesture];
     
+    self.calendar.appearance.borderTodayColor = [UIColor darkTextColor];
     [self.calendar addObserver:self forKeyPath:@"scope" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:_KVOContext];
     self.calendar.placeholderType = FSCalendarPlaceholderTypeNone;
     self.calendar.scope = FSCalendarScopeWeek;

@@ -204,6 +204,8 @@ typedef NS_OPTIONS(NSUInteger, FSCalendarCaseOptions) {
  */
 @property (strong, nonatomic) UIColor  *borderSelectionColor;
 
+@property (nonatomic, strong) UIColor  *borderTodayColor;
+
 /**
  * The border radius, while 1 means a circle, 0 means a rectangle, and the middle value will give it a corner radius.
  */

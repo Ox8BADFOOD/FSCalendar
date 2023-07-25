@@ -46,7 +46,7 @@
 }
 
 - (void)commonInit
-{   
+{
     UILabel *label;
     CAShapeLayer *shapeLayer;
     UIImageView *imageView;
@@ -301,9 +301,9 @@
 - (UIColor *)colorForCellBorder
 {
     if (self.selected) {
-        return _preferredBorderSelectionColor ?: _appearance.borderSelectionColor;
+        return _preferredBorderSelectionColor ?: [self colorForCurrentStateInDictionary:_appearance.borderColors];//_appearance.borderSelectionColor;
     }
-    return _preferredBorderDefaultColor ?: _appearance.borderDefaultColor;
+    return _preferredBorderDefaultColor ?: [self colorForCurrentStateInDictionary:_appearance.borderColors];
 }
 
 - (NSArray<UIColor *> *)colorsForEvents

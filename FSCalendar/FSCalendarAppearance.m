@@ -386,6 +386,21 @@
     return _borderColors[@(FSCalendarCellStateSelected)];
 }
 
+-(void)setBorderTodayColor:(UIColor *)borderTodayColor
+{
+    if (borderTodayColor) {
+        _borderColors[@(FSCalendarCellStateToday)] = borderTodayColor;
+    } else {
+        [_borderColors removeObjectForKey:@(FSCalendarCellStateToday)];
+    }
+    [self.calendar configureAppearance];
+}
+
+- (UIColor *)borderTodayColor
+{
+    return _borderColors[@(FSCalendarCellStateToday)];
+}
+
 - (void)setBorderRadius:(CGFloat)borderRadius
 {
     borderRadius = MAX(0.0, borderRadius);
